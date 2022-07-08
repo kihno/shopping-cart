@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add to cart button renders button 1`] = `
+<div>
+  <button
+    class="addButton"
+    type="button"
+  >
+    Add to Cart
+  </button>
+</div>
+`;
