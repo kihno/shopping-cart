@@ -4,9 +4,9 @@ const Item = (props) => {
 
     return (
         <div className="item">
-            <img src={props.img} className="itemImg"></img>
-            <div className="itemName">{props.name}</div>
-            <div className="itemDescription">{props.description}</div>
+            <img src={props.img} className="itemImg" alt={props.name}></img>
+            <div className="itemName" data-testId="name">{props.name}</div>
+            <div className="itemDescription" data-testId="description">{props.description}</div>
         </div>
     )
 }
