@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shop page renders shop page 1`] = `
+<div>
+  <div
+    id="shop"
+  >
+    <div
+      data-testid="item"
+    >
+      foo
+    </div>
+    <div
+      data-testid="item"
+    >
+      bar
+    </div>
+    <div
+      data-testid="item"
+    >
+      baz
+    </div>
+  </div>
+</div>
+`;

@@ -1,11 +1,12 @@
 import React from 'react';
+import Product from './Product';
 
 const Shop = (props) => {
 
     return (
         <div id="shop">
-            {props.items.map(() => {
-                return <Item name={item.name} description={item.description} img={item.img} key={item.id}/>
+            {props.items.map(item => {
+                return <Product item={item} />
             })}
         </div>
     )

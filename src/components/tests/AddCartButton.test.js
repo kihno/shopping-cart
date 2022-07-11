@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import AddCartButton from '../components/AddCartButton';
+import AddCartButton from '../AddCartButton';
 
 describe('Add to cart button', () => {
     it ('renders button', () => {
