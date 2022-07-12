@@ -8,7 +8,7 @@ const emptyCart = [];
 
 describe('Cart Button', () => {
     it('renders cart icon', () => {
-        render(<CartButton cart={cart} />);
+        render(<CartButton cart={emptyCart} />);
         const icon = screen.getByRole('img');
 
         expect(icon).toHaveAttribute('src', 'shoppingBag.svg');
