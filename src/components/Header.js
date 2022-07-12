@@ -3,11 +3,11 @@ import React from 'react';
 import CartButton from './CartButton';
 
 const Header = (props) => {
-    const { cart, handleCartClick } = props;
+    const { cart, handleCartClick, handleLogoClick } = props;
 
     return(
         <div id="header">
-            <div id="logo">LOGO</div>
+            <div id="logo" onClick={handleLogoClick}>LOGO</div>
             <nav>
                 <ul>
                     <Link to="/">

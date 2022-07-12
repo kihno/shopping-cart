@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shopping cart renders cart 1`] = `
+<div>
+  <div
+    id="cart"
+  >
+    <div
+      class="cartItem"
+      data-testid="cartItem"
+    >
+      <div
+        data-testid="name"
+      >
+        foo
+      </div>
+      <div>
+        15
+      </div>
+    </div>
+    <div
+      class="cartItem"
+      data-testid="cartItem"
+    >
+      <div
+        data-testid="name"
+      >
+        bar
+      </div>
+      <div>
+        5
+      </div>
+    </div>
+    <div
+      class="cartItem"
+      data-testid="cartItem"
+    >
+      <div
+        data-testid="name"
+      >
+        baz
+      </div>
+      <div>
+        3
+      </div>
+    </div>
+    <div
+      data-testid="price"
+      id="cartTotal"
+    >
+      23
+    </div>
+  </div>
+</div>
+`;
