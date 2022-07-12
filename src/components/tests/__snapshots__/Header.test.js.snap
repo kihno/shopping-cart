@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders header 1`] = `
+<div>
+  <div
+    id="header"
+  >
+    <div
+      id="logo"
+    >
+      LOGO
+    </div>
+    <nav>
+      <ul>
+        <a
+          href="/"
+        >
+          <li>
+            Home
+          </li>
+        </a>
+        <a
+          href="/shop"
+        >
+          <li>
+            Shop
+          </li>
+        </a>
+      </ul>
+    </nav>
+    <div
+      id="cartButton"
+    >
+      <img
+        alt="Shopping Cart"
+        id="shoppingCart"
+        src="shoppingBag.svg"
+      />
+      <span
+        data-testid="cartTotal"
+        id="cartTotal"
+      />
+    </div>
+  </div>
+</div>
+`;
