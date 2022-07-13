@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
+import Home from './components/Home';
+import Shop from './components/Shop';
 import Cart from './components/Cart';
-import RouteSwitch from './components/RouteSwitch';
 import Footer from './components/Footer';
 
 function App() {
@@ -61,7 +62,10 @@ function App() {
     <div className="App">
       <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} />
       <Cart cart={cart} />
-      <RouteSwitch cart={cart} items={items} handleShopClick={handleShopClick} handleAdd={handleAdd} />
+      <Routes>
+              <Route path="/" element={<Home handleShopClick={handleShopClick} />} />
+              <Route path="/shop" element={<Shop items={items} handleAdd={handleAdd} />} />
+        </Routes>
       <Footer />
     </div>
   );
