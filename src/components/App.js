@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import '../styles/App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import Shop from './components/Shop';
-import Cart from './components/Cart';
-import Footer from './components/Footer';
+import Header from './Header';
+import Home from './Home';
+import Shop from './Shop';
+import Cart from './Cart';
+import Footer from './Footer';
 
-function App() {
+const App = () => {
   const [cart, setCart] = useState([]);
   const [items, setItems] = useState([]);
+  const [hide, setHide] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -55,13 +56,13 @@ function App() {
   }
 
   const handleCartClick = () => {
-
+    setHide(!hide);
   }
 
-  return (
+  return(
     <div className="App">
       <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} />
-      <Cart cart={cart} />
+      <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} />
       <Routes>
               <Route path="/" element={<Home handleShopClick={handleShopClick} />} />
               <Route path="/shop" element={<Shop items={items} handleAdd={handleAdd} />} />

@@ -7,6 +7,10 @@ body {
   background-color: navy;
 }
 
+.hide {
+  display: none;
+}
+
 #shoppingCart {
   height: 40px;
 }

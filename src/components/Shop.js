@@ -7,7 +7,7 @@ const Shop = (props) => {
         <div id="shop">
             <h1>Shop Page</h1>
             {props.items.map(item => {
-                return <Product item={item} />
+                return <Product item={item} handleAdd={props.handleAdd} />
             })}
         </div>
     )
