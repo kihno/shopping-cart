@@ -1,7 +1,8 @@
 import React from 'react';
+import trash from '../images/trash-black.svg';
 
 const Cart = (props) => {
-    const { cart, hide, handleCartClick } = props;
+    const { cart, hide, handleCartClick, handleDelete } = props;
 
     const totalPrice = (cart) => {
         let price = 0;
@@ -17,12 +18,13 @@ const Cart = (props) => {
         return (
             <div id="cart" className={hide ? "hide" : null}>
             {cart.map(item => {
-                    return <div className="cartItem" key={item.id} data-testId="cartItem">
-                                <div data-testId="name">{item.name}</div>
+                    return <div className="cartItem" key={item.id} data-testid="cartItem">
+                                <div data-testid="name">{item.name}</div>
                                 <div>{item.price}</div>
+                                <img src={trash} alt="Delte" className="trashIcon" onClick={() => handleDelete(item)} />
                             </div>
                 })}
-                <div id="cartTotal" data-testId="price">{totalPrice(cart)}</div>
+                <div id="cartTotal" data-testid="price">{totalPrice(cart)}</div>
             <button onClick={handleCartClick} >Continue Shopping</button>
             <button>Checkout</button>
         </div>

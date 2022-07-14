@@ -23,7 +23,7 @@ const App = () => {
     .then((res) => res.json())
     .then((json) => {
 
-      for (let i = 0; i < json.length; i++) {
+      for (let i = 0; i < json.length - 1; i++) {
         const item = {
           id: json[i].id,
           name: json[i].name,
@@ -59,10 +59,14 @@ const App = () => {
     setHide(!hide);
   }
 
+  const handleDelete = (cartItem) => {
+    setCart(cart.filter(item => item.name !== cartItem.name));
+  }
+
   return(
     <div className="App">
       <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} />
-      <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} />
+      <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} handleDelete={handleDelete} />
       <Routes>
               <Route path="/" element={<Home handleShopClick={handleShopClick} />} />
               <Route path="/shop" element={<Shop items={items} handleAdd={handleAdd} />} />
