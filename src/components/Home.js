@@ -6,7 +6,8 @@ const Home = (props) => {
 
     return(
         <div id="home">
-            <h1>Home Page</h1>
+            <h1>UNSC Surplus</h1>
+            <h2>Travel the ring in style</h2>
             <ShopButton handleShopClick={handleShopClick} />
         </div>
     )

@@ -34,8 +34,6 @@ const App = () => {
 
         setItems(prevState => [...prevState, item]);
       }
-
-      console.log(items);
     });
   }, []);
 
@@ -63,8 +61,9 @@ const App = () => {
     setCart(cart.filter(item => item.name !== cartItem.name));
   }
 
+
   return(
-    <div className="App">
+    <div className="app">
       <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} />
       <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} handleDelete={handleDelete} />
       <Routes>

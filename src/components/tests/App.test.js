@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from '../App';
 import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
 
 const mockedUsedNavigate = jest.fn();
 
@@ -12,7 +13,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('App homepage', () => {
     it('successful api call', async () => {
-        render(<App />);
+        const {getByText} = render(<App />);
 
         const button = getByText('Shop Now');
         expect(button).toBeInTheDocument();
