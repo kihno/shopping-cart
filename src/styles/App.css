@@ -35,6 +35,45 @@ body {
   color: white;
 }
 
+#cart {
+  position: absolute;
+  top: 124px;
+  right: 0;
+  width: 20rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 30px;;
+  justify-content: flex-end;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.price::before {
+  content: '$ ';
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cartTotal {
+  margin-right: 25px;
+  align-self: flex-end;
+}
+
+#cartButtons {
+  align-self: center;
+}
+
+.priceContainer {
+  display: flex;
+  gap: 5px;
+}
+
 #shop {
   width: 100%;
   background-color: white;
@@ -52,10 +91,6 @@ a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-}
-
-.hide {
-  display: none;
 }
 
 #cartButton {
@@ -79,8 +114,22 @@ a {
   font-weight: bold;
 }
 
+.quantity {
+  width: 30px;
+}
+
 .trashIcon {
   height: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.trashIcon:hover {
+  background-color: lightgrey;
+}
+
+.hide {
+  display: none !important;
 }
 
 #footer {

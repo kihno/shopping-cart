@@ -9,7 +9,7 @@ const Product = (props) => {
             <img src={item.img} className="itemImg" alt={item.name}></img>
             <div className="itemName" data-testid="name">{item.name}</div>
             <div className="itemDescription" data-testid="description">{item.description}</div>
-            <div className="itemPrice" data-testid="price">{item.price}</div>
+            <div className="price itemPrice" data-testid="price">{item.price}</div>
             <AddCartButton handleAdd={() => handleAdd(item)} />
         </div>
     )

@@ -6,6 +6,7 @@ import Home from './Home';
 import Shop from './Shop';
 import Cart from './Cart';
 import Footer from './Footer';
+import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -30,6 +31,7 @@ const App = () => {
           description: json[i].description,
           img: json[i].smallIconImageUrl,
           price: getCost(),
+          quantity: 1,
         }
 
         setItems(prevState => [...prevState, item]);
@@ -49,8 +51,33 @@ const App = () => {
     navigate('/');
   }
 
-  const handleAdd = (item) => {
-    setCart(prevCart => [...prevCart, item]);
+  const handleAdd = (newItem) => {
+
+    if (cart.some(item => item.name === newItem.name)) {
+      const newCart = cart.map(item => {
+        if (item.name === newItem.name) {
+          const newQuantity = parseInt(item.quantity) + 1;
+
+          return {...item, quantity: newQuantity}
+        }
+      });
+
+      setCart(newCart);
+
+    } else {
+      setCart(prevCart => [...prevCart, newItem]);
+    }
+  }
+
+  const handleInput = (e) => {
+    const name = e.target.name;
+
+    const newCart = cart.map(item => {
+      if (item.name === name) {
+        return {...item, quantity: e.target.value}
+      }
+    });
+    setCart(newCart);
   }
 
   const handleCartClick = () => {
@@ -65,7 +92,7 @@ const App = () => {
   return(
     <div className="app">
       <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} />
-      <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} handleDelete={handleDelete} />
+      <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} handleInput={handleInput} handleDelete={handleDelete} />
       <Routes>
               <Route path="/" element={<Home handleShopClick={handleShopClick} />} />
               <Route path="/shop" element={<Shop items={items} handleAdd={handleAdd} />} />
