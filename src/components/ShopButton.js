@@ -4,7 +4,9 @@ const ShopButton = (props) => {
     const { handleShopClick } = props;
 
     return(
-        <button type="button" id="shopButton" onClick={handleShopClick}>Shop Now</button>
+        <div id="shopBtnContainer">
+            <button type="button" id="shopButton" onClick={handleShopClick}>Shop Now</button>
+        </div>
     )
 }
 

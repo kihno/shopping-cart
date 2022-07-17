@@ -6,7 +6,6 @@ import Home from './Home';
 import Shop from './Shop';
 import Cart from './Cart';
 import Footer from './Footer';
-import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers';
 
 const App = () => {
   const [cart, setCart] = useState([]);
