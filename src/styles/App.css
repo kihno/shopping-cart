@@ -28,6 +28,10 @@ body {
   margin: 20px;
 }
 
+.logo {
+  height: 90px;
+}
+
 #home {
   padding-left: 50px;
   width: 100%;
