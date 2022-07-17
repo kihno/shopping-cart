@@ -22,17 +22,17 @@ const Cart = (props) => {
                     return <div className="cartItem" key={item.id} data-testid="cartItem">
                                 <div className="cartName" data-testid="name">{item.name}</div>
                                 <div className="priceContainer">
-                                    <div className="price">{item.price * item.quantity}</div>
                                     <input type="number" className="quantity" name={item.name} value={item.quantity} onChange={handleInput} />
+                                    <div className="price">{(item.price * item.quantity).toLocaleString('en', {useGrouping:true})}</div>
                                     <img src={trash} alt="Delete" className="trashIcon" onClick={() => handleDelete(item)} />
                                 </div>
                                 
                             </div>
                 })}
-                <div id="cartTotal" data-testid="price">Cart Total: $ {totalPrice(cart)}</div>
+                <div id="cartTotal" data-testid="price">Cart Total: cR {totalPrice(cart).toLocaleString('en', {useGrouping:true})}</div>
             <div id="cartButtons">
-                <button onClick={handleCartClick} >Continue Shopping</button>
-                <button>Checkout</button>
+                <button onClick={handleCartClick} className="continueButton">Continue Shopping</button>
+                <button className="checkoutButton">Checkout</button>
             </div>
             
         </div>
@@ -42,7 +42,7 @@ const Cart = (props) => {
             <div id="cart" className={hide ? "hide" : null}>
             <p>Your Cart is Empty!</p>
             <div id="cartButtons">
-                <button onClick={handleCartClick} >Continue Shopping</button>
+                <button onClick={handleCartClick} className="continueButton">Continue Shopping</button>
             </div>
         </div>
         )

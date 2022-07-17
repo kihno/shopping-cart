@@ -24,12 +24,14 @@ const App = () => {
     .then((json) => {
 
       for (let i = 0; i < json.length - 1; i++) {
+        const prices =[149998, 92998, 39998, 104998, 199998, 52998, 64998, 29998, 79998];
+
         const item = {
           id: json[i].id,
           name: json[i].name,
           description: json[i].description,
           img: json[i].smallIconImageUrl,
-          price: getCost(),
+          price: prices[i],
           quantity: 1,
         }
 
@@ -37,10 +39,6 @@ const App = () => {
       }
     });
   }, []);
-
-  const getCost = () => {
-    return Math.floor(Math.random() * 10000) + 1000;
-  }
 
   const handleShopClick = () => {
     navigate('/shop');

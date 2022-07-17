@@ -16,8 +16,9 @@ body {
 
 #header {
   width: 100%;
+  height: 150px;
   display: flex;
-  gap: 100px;
+  gap: 130px;
   padding: 20px;
   align-items: center;
   color: white;
@@ -30,6 +31,14 @@ body {
 
 .logo {
   height: 90px;
+}
+
+.link {
+  font-size: 24px;
+}
+
+.link:hover {
+  color: rgb(186, 185, 185);
 }
 
 #home {
@@ -48,7 +57,7 @@ body {
 }
 
 #shopButton {
-  margin: 3px;
+  margin: 2px;
   background-color: #597859;
   color: white;
   border: none;
@@ -59,40 +68,54 @@ body {
   border-radius: 7px;
 }
 
-#shopButton:hover {
+#shopBtnContainer:hover {
+  box-shadow: 3px 5px 5px rgba(0,0,0,0.5);
+}
+
+#shopBtnContainer:hover > #shopButton {
   cursor: pointer;
   width: 122px;
   height: 51px;
   font-size: 19px;
 }
 
-#shopBtnContainer:hover {
-  box-shadow: 3px 5px 5px rgba(0,0,0,0.5);
+#shopBtnContainer:active > #shopButton {
+  width: 119px;
+  height: 49px;
+  font-size: 18px;
 }
 
 #cart {
   position: absolute;
-  top: 124px;
+  top: 174px;
   right: 0;
-  width: 20rem;
-  padding: 20px;
+  width: 30rem;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-size: 30px;;
+  font-size: 26px;;
   justify-content: flex-end;
   background-color: white;
-  border: 1px solid black;
+  border-left: 1px solid rgb(78, 78, 78);
+  border-right: 1px solid rgb(78, 78, 78);
+  border-bottom: 1px solid rgb(78, 78, 78);
+  border-radius: 0 0 4px 4px;
+  box-shadow: -4px 4px 9px rgba(0,0,0,0.3);
 }
 
 .price::before {
-  content: '$ ';
+  content: 'cR ';
+}
+
+.cartName {
+  width: 105px;
 }
 
 .cartItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 130px;
 }
 
 #cartTotal {
@@ -102,21 +125,39 @@ body {
 
 #cartButtons {
   align-self: center;
+  display: flex;
+  gap: 20px;
+}
+
+.continueButton {
+  cursor: pointer;
+  height: 30px;
+  background-color: #597859;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+}
+
+.checkoutButton {
+  cursor: pointer;
+  background-color: #efb82a;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
 }
 
 .priceContainer {
   display: flex;
-  gap: 5px;
-}
-
-#shop {
-  width: 100%;
-  background-color: white;
+  align-items: center;
+  gap: 15px;
 }
 
 nav > ul {
   padding: 0;
-  gap: 20px;
+  gap: 40px;
   display: flex;
   justify-content: space-around;
   list-style: none;
@@ -150,7 +191,8 @@ a {
 }
 
 .quantity {
-  width: 30px;
+  width: 24px;
+  height: 98%;
 }
 
 .trashIcon {
@@ -167,6 +209,28 @@ a {
   display: none !important;
 }
 
+#shop {
+  width: 100%;
+  background-color: white;
+}
+
+#shop>h1 {
+  margin-left: 50px;
+}
+
+#productGrid {
+  padding:50px;
+}
+
+.addButton {
+  cursor: pointer;
+  height: 30px;
+  background-color: #597859;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+}
 #footer {
   width: 100%;
   background-color: rgba(0,0,0,0.5);
