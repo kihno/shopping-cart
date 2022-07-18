@@ -29,7 +29,7 @@ const App = () => {
         const item = {
           id: json[i].id,
           name: json[i].name,
-          description: json[i].description,
+          description: json[i].description || 'Coming Soon',
           img: json[i].smallIconImageUrl,
           price: prices[i],
           quantity: 1,
@@ -71,7 +71,9 @@ const App = () => {
 
     const newCart = cart.map(item => {
       if (item.name === name) {
-        return {...item, quantity: e.target.value}
+        return {...item, quantity: parseInt(e.target.value)}
+      } else {
+        return item;
       }
     });
     setCart(newCart);

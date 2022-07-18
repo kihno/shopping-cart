@@ -40,7 +40,7 @@ const Cart = (props) => {
     } else {
         return (
             <div id="cart" className={hide ? "hide" : null}>
-            <p>Your Cart is Empty!</p>
+            <p id="emptyCart">Your Cart is Empty!</p>
             <div id="cartButtons">
                 <button onClick={handleCartClick} className="continueButton">Continue Shopping</button>
             </div>
