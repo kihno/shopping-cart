@@ -4,7 +4,7 @@ import CartButton from './CartButton';
 import unsc from '../images/unsc-surplus.png';
 
 const Header = (props) => {
-    const { cart, handleCartClick, handleLogoClick } = props;
+    const { cart, handleCartClick, handleLogoClick, hideCart } = props;
 
     return(
         <div id="header">
@@ -13,10 +13,10 @@ const Header = (props) => {
             </div>
             <nav>
                 <ul>
-                    <Link to="/">
+                    <Link to="/" onClick={hideCart}>
                         <li className="link">Home</li>
                     </Link>
-                    <Link to="/shop">
+                    <Link to="/shop" onClick={hideCart}>
                         <li className="link">Shop</li>
                     </Link>
                 </ul>

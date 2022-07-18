@@ -42,10 +42,16 @@ const App = () => {
 
   const handleShopClick = () => {
     navigate('/shop');
+    hideCart();
   }
 
   const handleLogoClick = () => {
     navigate('/');
+    hideCart();
+  }
+
+  const hideCart = () => {
+    setHide(true);
   }
 
   const handleAdd = (newItem) => {
@@ -90,7 +96,7 @@ const App = () => {
 
   return(
     <div className="app">
-      <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} />
+      <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} hideCart={hideCart} />
       <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} handleInput={handleInput} handleDelete={handleDelete} />
       <Routes>
               <Route path="/" element={<Home handleShopClick={handleShopClick} />} />
