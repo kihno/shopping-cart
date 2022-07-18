@@ -2,7 +2,7 @@ import React from 'react';
 import trash from '../images/trash-black.svg';
 
 const Cart = (props) => {
-    const { cart, hide, handleCartClick, handleInput, handleDelete } = props;
+    const { cart, hide, handleCartClick, handleInput, handleDelete, handleShopClick } = props;
 
     const totalPrice = (cart) => {
         let price = 0;
@@ -31,7 +31,7 @@ const Cart = (props) => {
                 })}
                 <div id="cartTotal" data-testid="price">Cart Total: cR {totalPrice(cart).toLocaleString('en', {useGrouping:true})}</div>
             <div id="cartButtons">
-                <button onClick={handleCartClick} className="continueButton">Continue Shopping</button>
+                <button onClick={handleShopClick} className="continueButton">Continue Shopping</button>
                 <button className="checkoutButton">Checkout</button>
             </div>
             
@@ -42,7 +42,7 @@ const Cart = (props) => {
             <div id="cart" className={hide ? "hide" : null}>
             <p id="emptyCart">Your Cart is Empty!</p>
             <div id="cartButtons">
-                <button onClick={handleCartClick} className="continueButton">Continue Shopping</button>
+                <button onClick={handleShopClick} className="continueButton">Continue Shopping</button>
             </div>
         </div>
         )

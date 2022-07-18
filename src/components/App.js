@@ -97,7 +97,7 @@ const App = () => {
   return(
     <div className="app">
       <Header cart={cart} handleLogoClick={handleLogoClick} handleCartClick={handleCartClick} hideCart={hideCart} />
-      <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} handleInput={handleInput} handleDelete={handleDelete} />
+      <Cart cart={cart} hide={hide} handleCartClick={handleCartClick} handleInput={handleInput} handleDelete={handleDelete} handleShopClick={handleShopClick} />
       <Routes>
               <Route path="/" element={<Home handleShopClick={handleShopClick} />} />
               <Route path="/shop" element={<Shop items={items} handleAdd={handleAdd} />} />
