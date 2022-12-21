@@ -40,6 +40,10 @@ const App = () => {
     });
   }, []);
 
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
+
   const handleShopClick = () => {
     navigate('/shop');
     hideCart();
@@ -63,6 +67,7 @@ const App = () => {
 
           return {...item, quantity: newQuantity}
         }
+        return item
       });
 
       setCart(newCart);
@@ -71,6 +76,7 @@ const App = () => {
       setCart(prevCart => [...prevCart, newItem]);
     }
   }
+ 
 
   const handleInput = (e) => {
     const name = e.target.name;

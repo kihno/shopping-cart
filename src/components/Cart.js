@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import trash from '../images/trash-black.svg';
 
 const Cart = (props) => {
     const { cart, hide, handleCartClick, handleInput, handleDelete, handleShopClick } = props;
 
-    const totalPrice = (cart) => {
+    const [cartTotal, setCartTotal] = useState(0);
+
+    useEffect(() => {
         let price = 0;
 
         cart.map(item => {
@@ -12,13 +14,13 @@ const Cart = (props) => {
           price += itemPrice;
         });
 
-        return price;
-    }
+        setCartTotal(price);
+    }, [cart]);
 
     if (cart.length > 0) {
         return (
             <div id="cart" className={hide ? "hide" : null}>
-            {cart.map(item => {
+            {cart.length > 0 && cart.map(item => {
                     return <div className="cartItem" key={item.id} data-testid="cartItem">
                                 <div className="cartName" data-testid="name">{item.name}</div>
                                 <div className="priceContainer">
@@ -29,7 +31,7 @@ const Cart = (props) => {
                                 
                             </div>
                 })}
-                <div id="cartTotal" data-testid="price">Cart Total: cR {totalPrice(cart).toLocaleString('en', {useGrouping:true})}</div>
+                <div id="cartTotal" data-testid="price">Cart Total: cR {cartTotal.toLocaleString('en', {useGrouping:true})}</div>
             <div id="cartButtons">
                 <button onClick={handleShopClick} className="continueButton">Continue Shopping</button>
                 <button className="checkoutButton">Checkout</button>

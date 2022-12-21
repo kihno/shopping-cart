@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import shoppingBag from '../images/shoppingBag.svg';
 
 const CartButton = (props) => {
     const { cart, handleCartClick } = props;
 
-    let cartNumber = 0;
+    const [cartNumber, setCartNumber] = useState(0);
 
-    cart.map(item => {
-        cartNumber += item.quantity;
-        return parseInt(cartNumber, 1);
-    });
+    useEffect(() => {
+        let quantity = 0;
+
+        cart.map(item => {
+            quantity += item.quantity;
+            setCartNumber(quantity);
+        });
+    }, [cart]);
 
     return(
         <div id="cartButton" onClick={handleCartClick}>

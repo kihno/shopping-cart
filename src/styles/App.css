@@ -15,7 +15,7 @@ body {
 }
 
 #header {
-  width: 100%;
+  width: calc(100% - 40px);
   height: 100px;
   display: flex;
   gap: 130px;
@@ -43,7 +43,7 @@ body {
 
 #home {
   padding-left: 50px;
-  width: 100%;
+  width: calc(100% - 150px);
   height: 100%;
   color: white;
   display: flex;
@@ -155,8 +155,10 @@ h1, h2 {
 }
 
 .priceContainer {
+  width: 250px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 15px;
 }
 
@@ -191,7 +193,7 @@ a {
 
 #cartNumber {
   position: absolute;
-  right: 15px;
+  right: 33px;
   background-color: red;
   border-radius: 50%;
   height: 18px;
